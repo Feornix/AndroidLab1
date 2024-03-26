@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.androidlab1.databinding.FragmentBlankBinding;
 
@@ -63,6 +64,18 @@ public class BlankFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentBlankBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+        binding.button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(),"Smotrov Valentin", Toast.LENGTH_LONG).show();
+            }
+        });
+        binding.button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.textView.setText("New text");
+            }
+        });
         // Inflate the layout for this fragment
         return view;
     }
